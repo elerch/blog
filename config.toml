@@ -9,5 +9,9 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
     name = "Emil Lerch"
 
 [permalinks]
-    posts = "/:year/:month/:day/:title/"
+    posts = "/:slug/"
 
+[params]
+    GitHubUser = "elerch"
+    TwitterUser = "elerch"
+    LinkedInUser = "emillerch"
