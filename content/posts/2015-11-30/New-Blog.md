@@ -5,15 +5,14 @@ title = "New Blog"
 
 +++
 
-This is a new blog. There are many others like it, but this one is
-mine.
-
-I had the following goals when creating this new blog site:
+I am transitioning to a new blog host and new, well, everything
+regarding my blog. I had the following goals when creating this new blog site:
 
 * Remove dependence on blogger.com
-* Change the url. It's now more common to *not* have "blog" in the url
+* Change the url. It's now more common to **not** have "blog" in the url
 * Reduce the page size/number of requests
-* Improve the speed of the site
+* Improve the speed of the site (see above, plus CDN)
+* SSL everywhere
 
 This is still a work in progress and the styling will be updated
 moving forward, but I'm a fan of dark themes, so this is roughly where
@@ -55,6 +54,8 @@ to have a blog, and the point of a blog is to read it, why not make the
 size relatively large? Anyway, I'm still tweaking spacing and such as
 a result.
 * Flair. The site might be minimal, but maybe a bit too minimal.
+* Comments. I'd like to enable comments without a lot of ceremony.
+Currently I don't have comments, but am considering [Disqus](https://disqus.com/) or [Discourse](http://www.discourse.org)
 
 # Things I want improved
 
