@@ -3,8 +3,6 @@ languageCode = "en-us"
 title = "Emil Lerch"
 SectionPagesMenu = "main"
 
-copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
-
 [author]
     name = "Emil Lerch"
 
@@ -12,6 +10,8 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
     posts = "/:slug/"
 
 [params]
+    Author = "Emil Lerch"
+    Copyright = "<a href='http://creativecommons.org/licenses/by/4.0/' title='Creative Commons Attribution'>Creative Commons Attribution-ShareAlike 4.0 International License</a>. Please attribute properly and link back."
     GitHubUser = "elerch"
     TwitterUser = "elerch"
     LinkedInUser = "emillerch"
