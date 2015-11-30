@@ -1,0 +1,13 @@
+baseurl = "https://emil.lerch.org"
+languageCode = "en-us"
+title = "Emil Lerch"
+SectionPagesMenu = "main"
+
+copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+
+[author]
+    name = "Emil Lerch"
+
+[permalinks]
+    posts = "/:year/:month/:day/:title/"
+
