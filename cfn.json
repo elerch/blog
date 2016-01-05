@@ -1,14 +1,15 @@
 {
       "AWSTemplateFormatVersion" : "2010-09-09",
       "Resources" : {
-          "emil.lerch.org" : {
+          "S3Bucket" : {
              "Type" : "AWS::S3::Bucket",
              "Properties" : {
                  "AccessControl" : "PublicRead",
                  "WebsiteConfiguration" : {
                      "IndexDocument" : "index.html",
                      "ErrorDocument" : "error.html"
-                 }
+                 },
+		 "BucketName": "emil.lerch.org"
              },
              "DeletionPolicy" : "Retain"
           }
