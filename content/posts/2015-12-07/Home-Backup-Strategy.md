@@ -19,7 +19,7 @@ procedure that covers each item in turn. Instead, I'll describe the solution
 and discuss how it addresses each point.
 
 First, the solution involves a local NAS with continous asynchronous backup
-to Code42's CrashPlan servers in the cloud. This is the only portion of the
+to Code42's [CrashPlan] servers in the cloud. This is the only portion of the
 solution that includes a recurring cost, however, that could be eliminated if
 I instead used their "backup to a friend" feature. However, the $5/month cost
 is reasonable, especially for unlimited data. The continuous asynchronous
@@ -33,7 +33,7 @@ however, is that this does not protect me from cosmic rays, nor does it allow
 me a quick recovery time in the event of a loss of my data locally.
 
 To handle the rest of the solution, I built a local NAS server using Ubuntu
-using the ZFS file system. I'm interested in btrfs as a replacement, but this
+and the [ZFS] file system. I'm interested in [btrfs] as a replacement, but this
 is still experimental. ZFS has a lot of really cool features. One of the best
 is also in btrfs, and that feature allows stored data to reheal through
 checksums. This is in contrast to a RAID system which is focused on one or
@@ -68,4 +68,6 @@ about minimizing down time in a catastrophic loss to the main array), and I
 can now send my deltas to the external drive. I do not have this on a schedule
 yet, but I should get this cron job up shortly.
 
-
+[CrashPlan]: http://www.code42.com/crashplan/
+[ZFS]: http://zfsonlinux.org/
+[btrfs]: https://btrfs.wiki.kernel.org/index.php/Main_Page
