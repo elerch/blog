@@ -1,7 +1,7 @@
 +++
 date = "2016-02-01T13:40:16-08:00"
 draft = true
-title = "git push static site deployment"
+title = "Static Site Deployment with 'git push' to GitHub"
 
 +++
 
