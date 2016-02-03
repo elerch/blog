@@ -5,5 +5,6 @@ title = "s3 and cloudfront index files"
 
 +++
 
-hi there again
+This post will describe how you can't use an S3 Origin if you want to take
+advantage of index.html in subdirectories.
 
