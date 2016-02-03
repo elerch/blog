@@ -1,6 +1,6 @@
 +++
 date = "2016-02-01T13:40:16-08:00"
-draft = true
+draft = false
 title = "Static Site Deployment with 'git push' to GitHub"
 
 +++
@@ -26,7 +26,8 @@ like this: https://aws.amazon.com/blogs/compute/dynamic-github-actions-with-aws-
 
 In my lambda function, I use the [GitHub REST API] to get the [repo archive].
 From there, I can unpack the archive and copy it to S3, using [Reduced
-Redundancy Storage] to save a few portions of a cent.
+Redundancy Storage] to save a few portions of a cent. Outside the cost
+of S3, the whole process stays within free usage limits.
 
 The lambda function, [CloudFormation] templates, and various scripts are
 hosted on GitHub: https://github.com/elerch/blog-deploy/. I've also
@@ -37,7 +38,10 @@ created this diagram on [CloudCraft]:
 One thing I'd really like to do in the lambda function is pull out the
 tight integration between the themes and the lambda function itself.
 However, since I don't normally [change my theme](https://github.com/elerch/gindoro),
-this will wait for another day.
+this will wait for another day. It would also be nice to extract the
+actual build steps (extract archive/run hugo on extracted archive/
+copy themes/copy output to S3) so that the lambda function can be used
+for a wider array of [DevOps] scenarios.
 
 [New Blog]: https://emil.lerch.org/new-blog/
 [S3]: http://aws.amazon.com/s3/
@@ -52,3 +56,4 @@ this will wait for another day.
 [Reduced Redundancy Storage]: http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingRRS.html
 [CloudFormation]: https://aws.amazon.com/cloudformation/
 [CloudCraft]: https://cloudcraft.co/
+[DevOps]: https://en.wikipedia.org/wiki/DevOps
