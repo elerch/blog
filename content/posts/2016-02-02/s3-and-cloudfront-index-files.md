@@ -1,6 +1,6 @@
 +++
 date = "2016-02-02T16:53:08-08:00"
-draft = true
+draft = false
 title = "index.html behavior with S3 and Cloudfront"
 
 +++
