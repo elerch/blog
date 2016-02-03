@@ -29,7 +29,8 @@ a way, it does. If I setup CloudFront for the domain example.com and visit
 https://example.com/, the index.html file will be fetched from S3 by CloudFront
 and delivered as we expect. However, this behavior is a one-off by CloudFront.
 If I visit https://example.com/my-test/, the object in my bucket with the
-key my-test/index.html will **not** be fetched.
+key my-test/index.html will **not** be fetched. As a result, you'll simply
+get a 404.
 
 How do we get around this? The first and easiest way is to simply create links
 to my-test/index.html rather than my-test/. This makes for ugly URLs though.
