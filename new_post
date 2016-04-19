@@ -1,2 +1,4 @@
 #!/bin/sh
-hugo new posts/`date +%Y-%m-%d`/$1.md
+# by taking "created" off, we can easily enable
+# vi $(./new_post yada-yada) and enter an editor
+hugo new posts/`date +%Y-%m-%d`/$1.md |cut -f 1 -d ' '
