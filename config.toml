@@ -17,3 +17,7 @@ SectionPagesMenu = "main"
     TwitterUser = "elerch"
     LinkedInUser = "emillerch"
     disqusShortname = "emillerch"
+
+[blackfriday]
+    smartDashes = false
+
