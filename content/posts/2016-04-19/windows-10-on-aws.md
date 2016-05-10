@@ -38,7 +38,10 @@ AWS-specific features as other Windows AMIs provided by Amazon.
 ```
 aws ec2 describe-import-image-tasks
 ```
-7. Once the AMI created, start instance as normal using your new ami
+* Once the AMI created, start instance as normal using your new ami
+
+**Update 2016-05-10**: If you want to remote in, don't forget to setup the
+OS to allow remote desktop prior to copying the VHD!
 
 [documentation]: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingImportImage.html
 [VirtualBox]: https://www.virtualbox.org/
