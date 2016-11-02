@@ -18,12 +18,12 @@ experience. I remain concerned that the overall linux community doesn't
 consider arch, so updates may break things. Time will tell on this.
 
 It took a while and I learned a **ton**, including that certain hardware
-[will not work|https://www.amazon.com/review/R2VFHAYPJIC9YB/ref=cm_cr_rdp_perm]
+[will not work](https://www.amazon.com/review/R2VFHAYPJIC9YB/ref=cm_cr_rdp_perm)
 with at least the UEFI on Macs. Those that are interested, btw, should
-use the [Samsung Flash Drive Fit|https://www.amazon.com/Samsung-Flash-Drive-MUF-64BB-AM/dp/B013CCTNKU/ref=cm_cr-mr-title]
+use the [Samsung Flash Drive Fit](https://www.amazon.com/Samsung-Flash-Drive-MUF-64BB-AM/dp/B013CCTNKU/ref=cm_cr-mr-title)
 instead.
 
-I created a [gist of my efforts|https://gist.github.com/elerch/678941eb670324ffc3f261eabba81310],
+I created a [gist of my efforts](https://gist.github.com/elerch/678941eb670324ffc3f261eabba81310),
 which I'll continue to maintain as a living document. I will not,
 however, include packages I install for my own use so I can keep
 the gist as more of a base install step-by-step.
