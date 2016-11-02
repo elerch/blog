@@ -1,6 +1,6 @@
 +++
 title = "Installation of Arch Linux on a USB stick with UEFI and legacy BIOS Support"
-draft = true
+draft = false
 date = "2016-11-01T19:28:18-07:00"
 
 +++
