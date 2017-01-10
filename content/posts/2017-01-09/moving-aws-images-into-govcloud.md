@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 title = "Moving AWS images into Govcloud"
 date = "2017-01-09T15:27:50-08:00"
 
@@ -39,7 +39,7 @@ Configure your instance in Commercial
 -------------------------------------
 
 Next, you will want to configure your instance. This is an optional step.
-As a proof of concept, I created a Centos 7 base image from the
+As a proof of concept, I created a CentOS 7 base image from the
 marketplace for this purpose. As a base image, I did not want to actually
 configure it. What little was done (basically configuration of the ssh key)
 would need to be undone if I want to make it useful to others. But you
