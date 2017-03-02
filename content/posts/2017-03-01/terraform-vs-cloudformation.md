@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = "2017-03-01T14:17:24-08:00"
 title = "Terraform vs CloudFormation"
 
