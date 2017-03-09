@@ -1,7 +1,7 @@
 +++
 date = "2017-03-09T14:16:06-08:00"
 title = "Rasperry Pi Headless Bootstrap"
-draft = true
+draft = false
 
 +++
 
