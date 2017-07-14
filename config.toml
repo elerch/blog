@@ -2,8 +2,8 @@ baseurl = "https://emil.lerch.org"
 languageCode = "en-us"
 title = "Emil Lerch"
 SectionPagesMenu = "main"
-pygmentsStyle = "monokai"
-PygmentsCodeFences = "true"
+#pygmentsStyle = "monokai"
+#PygmentsCodeFences = "true"
 
 [author]
     name = "Emil Lerch"
