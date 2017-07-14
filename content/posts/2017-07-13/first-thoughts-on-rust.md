@@ -1,7 +1,7 @@
 +++
 date = "2017-07-13T16:43:28-07:00"
 draft = true
-title = "first thoughts on rust"
+title = "First Thoughts on Rust"
 
 +++
 
@@ -154,6 +154,5 @@ things go. This write-up was based on commits up to
 
 [r]: https://www.rust-lang.org/
 [rb]: https://doc.rust-lang.org/book/
-[rd]: https://github.com/rust-lang/rust-roadmap/issues/3 "Rust should have a
-lower learning curve"
+[rd]: https://github.com/rust-lang/rust-roadmap/issues/3 "Rust should have a lower learning curve"
 [rfc-error]: https://github.com/rust-lang/rfcs/pull/243 "First-class error handling..."
