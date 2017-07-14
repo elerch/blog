@@ -1,6 +1,6 @@
 +++
 date = "2017-07-13T16:43:28-07:00"
-draft = true
+draft = false
 title = "First Thoughts on Rust"
 
 +++
