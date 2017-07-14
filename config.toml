@@ -21,6 +21,6 @@ PygmentsCodeFences = "true"
     disqusShortname = "emillerch"
 
 [blackfriday]
-    angledQuotes = "false"
-    smartDashes = "false"
-    latexDashes = "false"
+    angledQuotes = false
+    smartDashes = false
+    latexDashes = false
