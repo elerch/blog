@@ -4,9 +4,11 @@ title = "Emil Lerch"
 SectionPagesMenu = "main"
 pygmentsStyle = "monokai"
 PygmentsCodeFences = "true"
-angledQuotes = "false"
-smartDashes = "false"
-latexDashes = "false"
+
+[blackfriday]
+    angledQuotes = "false"
+    smartDashes = "false"
+    latexDashes = "false"
 
 [author]
     name = "Emil Lerch"
