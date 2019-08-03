@@ -4,6 +4,7 @@ title = "Emil Lerch"
 SectionPagesMenu = "main"
 pygmentsStyle = "monokai"
 PygmentsCodeFences = "true"
+theme = "gindoro"
 
 [author]
     name = "Emil Lerch"
