@@ -1,7 +1,7 @@
 ---
 title: "Year of Linux on the Desktop"
-date: 2019-04-04T09:12:13-07:00
-draft: true
+date: 2019-08-03T09:12:13-07:00
+draft: false
 ---
 
 I have used Linux under one form or another since [Slackware](https://en.wikipedia.org/wiki/Slackware)
