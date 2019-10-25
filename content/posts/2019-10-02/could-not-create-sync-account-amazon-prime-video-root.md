@@ -1,6 +1,6 @@
 ---
 title: "COULD_NOT_CREATE_SYNC_ACCOUNT Amazon Prime Video, and why root access is important"
-date: 2019-07-30T16:16:48-07:00
+date: 2019-10-02T16:16:48-07:00
 draft: false
 ---
 
