@@ -16,7 +16,7 @@ Windows on EC2, however, follows a different process. Here, the SSH public key
 is used a generic public key. When the Administrator process is [set by EC2Launch](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html#ec2launch-tasks),
 That password is encrypted using the public key provided, then you can decrypt
 the data with your private key. This can be done through the console, or with
-the command line ``aws ec2 get-password-data``. The console, however, requires
+the command line ```aws ec2 get-password-data```. The console, however, requires
 that you upload your private key, while the CLI version only encourages it.
 
 In my setup, pretty much the only key pair I use is generated via
@@ -33,7 +33,7 @@ in the PGP format, which is **not** how [get-password-data](https://docs.aws.ama
 provides it's data. Generally, the idea here is that if the private key is not
 provided, the data will be returned encrypted and base 64 encoded. The idea
 then is to base 64 decode the data, write a file out, and issue a command like
-``openssl rsautil -decrypt -inkey mykey <mypassword.bin`` to
+```openssl rsautil -decrypt -inkey mykey <mypassword.bin``` to
 decrypt it. That command may not work - it's just an example.
 
 Without direct access to the private key, using a command such as the above is
@@ -60,10 +60,10 @@ taking out that enforcement.
 
 Generally, what I was looking to do is the following:
 
-1. Export the gpg private and public key
-2. Convert the gpg private key to PEM format
-3. Load the private key into the PIV applet on the Yubikey
-4. Use PKCS#11 interface to decrypt the password data
+* Export the gpg private and public key
+* Convert the gpg private key to PEM format
+* Load the private key into the PIV applet on the Yubikey
+* Use PKCS#11 interface to decrypt the password data
 
 ## Step 0: Getting started
 
@@ -88,7 +88,7 @@ keys, which is a problem if the key is lost. For now, we'll just get the
 Yubikey initialized, changing the three management pins to something other than
 their default values:
 
-``sh
+```sh
   # Set the managment key: must be exactly 48 characters
   yubico-piv-tool -a set-mgm-key
 
@@ -99,7 +99,7 @@ their default values:
   # Please set the device PUK (Admin pin - default 12345678)
   # Since this default is well known, it's ok to pass it on the command line
   yubico-piv-tool -a change-puk -P12345678
-``
+```
 
 ## Step 1: Export the gpg private and public key
 
@@ -110,13 +110,13 @@ airgapped computer running [Tails](https://tails.boum.org/). Since these
 files are only used for this process, they can be managed from on the tails
 filesystem, which will be wiped on shutdown.
 
-``sh
+```sh
   # Replace mykey with the uid of your key. This is often your email address.
   # It can be seen in the command gpg --list-keys on one of the uid lines
   # If you have multiple uid lines, any one of them will work
   gpg --export-secret-key mykey > mykey.gpg # OpenPGP format secret key
   gpg --export-ssh-key mykey > mykey.pub    # OpenSSH format public key
-``
+```
 
 At this stage, we'll have the public key in OpenSSH format documented in
 [RFC 4253](https://tools.ietf.org/html/rfc4253#section-6.6). This will work
@@ -134,11 +134,11 @@ tool they provide to do the conversion. However, there is one caveat: the tool
 cannot convert password-protected keys. If you've been managing keys securely
 you certainly have a password protected key, so we need to remove this. It is for
 this reason you really want to do this on an ephemeral file system. We'll use
-the ``gpg --homedir`` option to override the normal home directory. Choose
+the ```gpg --homedir``` option to override the normal home directory. Choose
 something that will self-destruct, remove the passwords from the key, do another
 export, and the conversion can work. This looks like the following:
 
-``sh
+```sh
   # Replacements:
   #
   # * ephemeralDirectory: your ephemeral directory name
@@ -165,10 +165,10 @@ export, and the conversion can work. This looks like the following:
                                                 # of the subkeys of the imported key
   gpg --homedir $gpgtemphome --export-secret-key mykey > "mykey.gpg.nopass"
   openpgp2ssh DD53AC86 < "mykey.gpg.nopass" >mykey.pem # pem format secret key
-``
+```
 
 If you were successful, you'll have a PEM format secret key file in
-``$gpgtemphome/mykey.pem`` that can be now be loaded onto the Yubikey. The
+```$gpgtemphome/mykey.pem``` that can be now be loaded onto the Yubikey. The
 hard part is now done.
 
 ## Step 3: Load the private key into the PIV applet on the Yubikey
@@ -178,14 +178,14 @@ So, we need to load the key into slot 9a of the PIV applet. It's almost, but not
 quite, that simple. For this to operate correctly, we need a self-signed cert
 rather than just the key. The following commands will import the key, create
 the cert, and load it. Most of these commands will also require the management
-key to operate successfully. Anytime you see ``-k`` below, you'll be prompted.
+key to operate successfully. Anytime you see ```-k``` below, you'll be prompted.
 
 Note that pin-policy and touch-policy parameters only apply to Yubikey 4. I'm
 working with the (sort of) open source Yubikey Neo. You may want to adjust
-these to your taste. The ``-v`` turns on verbose mode, which I found helpful
+these to your taste. The ```-v``` turns on verbose mode, which I found helpful
 when the terminal wasn't pasting the management key.
 
-``sh
+```sh
   # This will prompt for the management key, without which you cannot import the key
   # Replace mykey.pem as appropriate
   yubico-piv-tool -s 9a -a import-key -i mykey.pem -k --pin-policy=once --touch-policy=always -v
@@ -202,7 +202,7 @@ when the terminal wasn't pasting the management key.
   # This will ask for the management key
   # Yubikey piv tool requires the file to be named with a pem suffix, so don't get fancy with the file sufix above
   yubico-piv-tool -a verify -a import-certificate -s 9a -i mykey-cert.pem -k
-``
+```
 
 At this point, you should be able to verify the key is properly loaded on the
 Yubikey. Your gpg exported ssh public key (in my example, "mykey.pub") should
@@ -210,19 +210,19 @@ match what comes off the Yubikey via PKCS#11. The ssh key from gpg will have a
 comment - the command below uses the Unix command cut to strip that out.
 As usual, replace the mykey.pub name with the name you used:
 
-``sh
+```sh
 [ "$(cut -f1-2 -d' ' <mykey.pub)" = "$(ssh-keygen -D /usr/lib/x86_64-linux-gnu/opensc-pkcs11.so -e)" ] && \
   echo 'File and smartcard match'
-``
+```
 
-With any luck, you should see the output ``File and smartcard match``. If you
+With any luck, you should see the output ```File and smartcard match```. If you
 don't, something went wrong. You can also test encrypt/decrypt operations with
 something like this:
 
-``sh
+```sh
 echo 'it worked' | openssl pkeyutl -encrypt -inkey mykey.pem -pubin > encrypted.bin
 pkcs11-tool --decrypt -v -l --input-file encrypted.bin  -m RSA-PKCS # Prints 'it worked'
-``
+```
 
 That should execute without errors and print 'it worked'. From the first test
 we know that the ssh key is properly loaded in slot 9a, and the second proves
@@ -257,11 +257,11 @@ not read from stdin (as it needs to prompt for the user PIN). Also,
 the password is not established immediately, so you may need to wait a bit
 for the data to appear.
 
-``sh
+```sh
 aws ec2 get-password-data --instance-id <blah> --query PasswordData --output text| base64 -d > encrypted-adminpass.bin
 pkcs11-tool --decrypt -v -l --input-file encrypted-adminpass.bin -m RSA-PKCS
 
-``
+```
 
 ## Connecting to the Windows instance.
 
@@ -271,10 +271,10 @@ has an agent installed by default, so in these cases you can attach an appropria
 IAM role and issue the following command, replacing the instance id below
 with yours:
 
-``sh
+```sh
 aws ssm start-automation-execution --document-name "AWSSupport-ManageRDPSettings" --parameters "InstanceId=i-03033520993ddf97f,NLASettingAction=Disable"
 
-``
+```
 
 ## But wait, what does all this have to do with Solokeys?!
 
