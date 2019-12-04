@@ -1,7 +1,7 @@
 ---
 title: "PKCS 11, OpenPGP, Yubikeys/Solokeys, and Windows AMIs"
 date: 2019-12-02T16:16:48-07:00
-draft: true
+draft: false
 ---
 
 # Using single key for both PKCS#11 (PIV app on Yubikey) and OpenPGP/GnuPG
