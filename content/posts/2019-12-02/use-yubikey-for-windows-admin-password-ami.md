@@ -33,7 +33,7 @@ in the PGP format, which is **not** how [get-password-data](https://docs.aws.ama
 provides it's data. Generally, the idea here is that if the private key is not
 provided, the data will be returned encrypted and base 64 encoded. The idea
 then is to base 64 decode the data, write a file out, and issue a command like
-```openssl rsautil -decrypt -inkey mykey <mypassword.bin``` to
+```openssl rsautil -decrypt -inkey mykey <mypassword.bin ``` to
 decrypt it. That command may not work - it's just an example.
 
 Without direct access to the private key, using a command such as the above is
