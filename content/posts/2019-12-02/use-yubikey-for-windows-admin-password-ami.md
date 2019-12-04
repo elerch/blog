@@ -16,7 +16,7 @@ Windows on EC2, however, follows a different process. Here, the SSH public key
 is used a generic public key. When the Administrator process is [set by EC2Launch](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html#ec2launch-tasks),
 That password is encrypted using the public key provided, then you can decrypt
 the data with your private key. This can be done through the console, or with
-the command line ```aws ec2 get-password-data```. The console, however, requires
+the command line `aws ec2 get-password-data`. The console, however, requires
 that you upload your private key, while the CLI version only encourages it.
 
 In my setup, pretty much the only key pair I use is generated via
@@ -33,7 +33,7 @@ in the PGP format, which is **not** how [get-password-data](https://docs.aws.ama
 provides it's data. Generally, the idea here is that if the private key is not
 provided, the data will be returned encrypted and base 64 encoded. The idea
 then is to base 64 decode the data, write a file out, and issue a command like
-```openssl rsautil -decrypt -inkey mykey <mypassword.bin ``` to
+`openssl rsautil -decrypt -inkey mykey <mypassword.bin` to
 decrypt it. That command may not work - it's just an example.
 
 Without direct access to the private key, using a command such as the above is
@@ -134,7 +134,7 @@ tool they provide to do the conversion. However, there is one caveat: the tool
 cannot convert password-protected keys. If you've been managing keys securely
 you certainly have a password protected key, so we need to remove this. It is for
 this reason you really want to do this on an ephemeral file system. We'll use
-the ```gpg --homedir``` option to override the normal home directory. Choose
+the `gpg --homedir` option to override the normal home directory. Choose
 something that will self-destruct, remove the passwords from the key, do another
 export, and the conversion can work. This looks like the following:
 
@@ -168,7 +168,7 @@ export, and the conversion can work. This looks like the following:
 ```
 
 If you were successful, you'll have a PEM format secret key file in
-```$gpgtemphome/mykey.pem``` that can be now be loaded onto the Yubikey. The
+`$gpgtemphome/mykey.pem` that can be now be loaded onto the Yubikey. The
 hard part is now done.
 
 ## Step 3: Load the private key into the PIV applet on the Yubikey
@@ -178,11 +178,11 @@ So, we need to load the key into slot 9a of the PIV applet. It's almost, but not
 quite, that simple. For this to operate correctly, we need a self-signed cert
 rather than just the key. The following commands will import the key, create
 the cert, and load it. Most of these commands will also require the management
-key to operate successfully. Anytime you see ```-k``` below, you'll be prompted.
+key to operate successfully. Anytime you see `-k` below, you'll be prompted.
 
 Note that pin-policy and touch-policy parameters only apply to Yubikey 4. I'm
 working with the (sort of) open source Yubikey Neo. You may want to adjust
-these to your taste. The ```-v``` turns on verbose mode, which I found helpful
+these to your taste. The `-v` turns on verbose mode, which I found helpful
 when the terminal wasn't pasting the management key.
 
 ```sh
@@ -260,7 +260,6 @@ for the data to appear.
 ```sh
 aws ec2 get-password-data --instance-id <blah> --query PasswordData --output text| base64 -d > encrypted-adminpass.bin
 pkcs11-tool --decrypt -v -l --input-file encrypted-adminpass.bin -m RSA-PKCS
-
 ```
 
 ## Connecting to the Windows instance.
@@ -273,7 +272,6 @@ with yours:
 
 ```sh
 aws ssm start-automation-execution --document-name "AWSSupport-ManageRDPSettings" --parameters "InstanceId=i-03033520993ddf97f,NLASettingAction=Disable"
-
 ```
 
 ## But wait, what does all this have to do with Solokeys?!
