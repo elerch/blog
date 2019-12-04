@@ -292,3 +292,11 @@ The following posts/links helped me immensely on this journey:
 * https://medium.com/google-cloud/google-cloud-ssh-with-os-login-with-yubikey-opensc-pkcs11-and-trusted-platform-module-tpm-based-86fa22a30f8d
 * http://gnupg.10057.n7.nabble.com/Private-key-export-for-SSH-td49236.html
 * https://blog.rchapman.org/posts/Import_an_existing_ssh_key_into_Yubikey_NEO_applet/
+
+## Updates
+
+Just after publishing this post, [this link](https://www.zdnet.com/article/two-malicious-python-libraries-removed-from-pypi/)
+came across an email list I subscribe to. In a nutshell, two Python libraries
+were caught exfiltrating private SSH and GPG keys. Storing your private keys
+on your Yubikey completely render this attack moot, as no private keys are
+available in any way.
