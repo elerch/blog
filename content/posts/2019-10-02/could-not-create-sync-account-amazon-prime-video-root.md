@@ -60,7 +60,7 @@ deep in the depths of Android, two files control the sync providers shown
 on the screen (and presumably in the APIs of Android). These are, at least on
 my machine, though I think it varies by Android version:
 
-* /data/system_de/0/accounts_ce.db
+* /data/system_ce/0/accounts_ce.db
 * /data/system/sync/accounts.xml
 
 So...the two files worked together. Using [termux](https://termux.com/) with
