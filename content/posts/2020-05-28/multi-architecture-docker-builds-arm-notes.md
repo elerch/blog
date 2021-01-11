@@ -1,7 +1,7 @@
 ---
 title: "Multi-architecture docker builds: notes on ARM"
 date: 2020-05-28T16:16:48-07:00
-draft: true
+draft: false
 ---
 
 Multi-architecture docker builds: notes on ARM
@@ -38,10 +38,10 @@ Using `uname -m` will provide the CPU architecture on [POSIX systems](https://pu
 On my [Raspberry Pi Zero](https://www.raspberrypi.org/pi-zero-w/), we see
 something like this:
 
-``sh
+```sh
 $ uname -m
 armv6l
-``
+```
 
 We can now translate this to:
 
