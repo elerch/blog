@@ -5,8 +5,8 @@
 # mr is just a perl script
 myrepos="http://source.myrepos.branchable.com/?p=source.git;a=blob_plain;f=mr;hb=HEAD"
 
-# vcsh is just a bash script
-vcsh=https://raw.githubusercontent.com/RichiH/vcsh/master/vcsh
+# vcsh was just a bash script. After this commit, they have some autotools thing
+vcsh=https://raw.githubusercontent.com/RichiH/vcsh/66944d009b8df64e0b2ddae757a83899ff8684b7/vcsh
 
 download() {
   cmd='curl -L "'"${1}"'" -o "'"${2}"'"'
@@ -65,16 +65,16 @@ if hash pacman 2> /dev/null; then
 fi
 # Temporary directory - OSX or Linux. See http://unix.stackexchange.com/a/84980/140674
 #mytmpdir=${mktemp -d 2>/dev/null || mktemp -d -t 'mytmpdir'}
-mkdir -p "${HOME}"/bin
-PATH="${HOME}/bin:${PATH}"
+mkdir -p "${HOME}"/.local/bin
+PATH="${HOME}/.local/bin:${PATH}"
 hash mr 2> /dev/null || \
-  download "${myrepos}" "${HOME}"/bin/mr || \
+  download "${myrepos}" "${HOME}"/.local/bin/mr || \
   { echo "Could not download mr. Please fix and try again"; exit 1; }
 hash perl 2> /dev/null || install_package perl
 hash perl 2> /dev/null || \
   { echo "Could not find perl, which is required by mr. Please fix and try again"; exit 1; }
 install_package git # vcsh is a git wrapper...
-hash vcsh 2> /dev/null || download "${vcsh}" "${HOME}"/bin/vcsh || \
+hash vcsh 2> /dev/null || download "${vcsh}" "${HOME}"/.local/bin/vcsh || \
   { echo "Could not download vcsh. Please fix and try again"; exit 1; }
 mkdir -p "${HOME}"/backup
 # move all dotfiles into the backup directory
