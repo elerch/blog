@@ -5,6 +5,7 @@ SectionPagesMenu = "main"
 pygmentsStyle = "monokai"
 PygmentsCodeFences = "true"
 theme = "gindoro"
+relativeURLs = true
 
 [author]
     name = "Emil Lerch"
