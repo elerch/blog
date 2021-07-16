@@ -20,12 +20,14 @@ at this time is to use zig whenever possible.
 If I can try to summarize the goals of the language, it would be this:
 
 Provide a **systems programming** programming language that:
+
   * Is better defined than C
   * Has first class support for cross-compilation (both OS and processor types)
   * Provides a high degree of safety
   * Can be used for embedded (bare metal/no OS) development
 
 Provide a **general purpose** programming language that:
+
   * Doesn't need garbage collection
   * Is simple
   * Generates small/fast executables
@@ -101,13 +103,18 @@ In 0.8.0, it has [Tier 1](https://ziglang.org/download/0.8.0/release-notes.html#
 support for 8 architectures and 4 Operating Systems in addition to freestanding/
 bare metal development. Tier 2 support adds 3 more Operating Systems plus UEFI,
 and 3 additional hardware architectures. However, C leaves a lot of underspecified
-behavior, which makes a lot of compiler differences. This may not be entirely
-fair as zig only has a single compiler implementation, but the expectation
-is that the language prevents a lot of undefined behavior. Nulls, for example,
+behavior, which makes a lot of compiler differences. Lack of C bitfield support
+in zig is pretty much blocked due to compiler differences stemming from
+underspecified behavior in the C language. Of course, complaining about
+compiler differences may not be entirely fair as zig only has a single
+compiler implementation, but the expectation of a language should be that
+the specification prevents a lot of undefined behavior. In zig, Nulls,
 must be explicitly allowed, and will be checked. Undefined variables are
 possible, but also checked by the compiler to be defined before use. Zig
 also adds `defer` and `errdefer`, which provide the ability to handle a lot
-of memory (or other resource) deallocation edge cases.
+of memory (or other resource) deallocation edge cases. As zig matures, additional
+checks are being investigated and added. Most recently, after 0.8.0 a change
+was made to detect and prevent unused variables.
 
 **Rust**
 
@@ -200,8 +207,8 @@ starts looping through the fields of an enum because you're doing some light
 metaprogramming. My recent example here is using enum values as switches to
 a command line program. Anything metaprogramming becomes comptime. First,
 you'll get an error you probably don't understand. The solution is to use an
-inline for, which you'll eventually figure out, but understanding what the
-compiler may be beyond some new programmers. This is complicated by the fact
+inline for, which you'll eventually figure out, but understanding the compiler
+behavior may be beyond some new programmers. This is complicated by the fact
 that throwing in some "printf debugging" won't do you any good because that,
 of course, is runtime, so you need to use `@compileLog` statements instead,
 which can look **really** weird when doing a `zig build` command.
@@ -212,14 +219,16 @@ that it may make IDEs unable to assist the programmer. For example, zig has
 usually used for function parameters. It basically says, "I don't want to
 worry about the type of this thing right now - I know what I'm doing". anytype
 will get replaced with the actual type at compile time, so you don't lose
-safety information, but in order for an IDE or language server to provide
+safety, but in order for an IDE or language server to provide
 completion information, the code needs to be fully evaluated, including all
 call sites. As a practical matter, I don't believe I've seen any intelligent
 completion based on anytype parameters, only my brain saying "I know it's
-anytype but the thing I get will have a function foo() on it".
+anytype but the thing I get will have a function foo() on it". To be fair,
+my brain needs to handle this with dynamically typed languages like JavaScript
+or Python, but zig is typed and it feels inconsistent here.
 
 The nice thing about comptime, though, is the power it provides (or promises).
-There are still gaps here, big ones like the inabillity to allocate memory
+There are still gaps here including big ones like the inabillity to allocate memory
 at comptime. These plan to be fixed, but even without memory allocation amazing
 things are currently possible, like the ability to parse json data at
 compile time. This pushes a lot more computation up front and makes executables
@@ -277,11 +286,14 @@ var fancy_array = init: {
 };
 ```
 
-While I'm glad this is possible, Rust would handle that by just ending
-here with a last line of `initial_value`, indicating that the block's "value"
-is initial_value. This feels a bit more natural to me, though I'm sure there
-are lots of reasons why other parts of zig make this undesirable or impossible.
-I'm not a language designer, but I do get to write words on the Internet. ;-)
+While I'm glad this is possible, Rust would handle that by just ending here
+with a last line of `initial_value` (excluding a semicolon), indicating that
+the block's "value" is initial_value. This feels a bit more natural to me,
+though I'm sure there are lots of reasons why other parts of zig make this
+undesirable or impossible.  I'm not a language designer, but I do get to write
+words on the Internet. ;-) I will note that shortly after writing the initial
+draft of this post there was a short discussion by the zig team on IRC touching
+on this in particular as being a bit awkward.
 
 The focus of the language is currently on building a self-hosted compiler, so
 it's not really fair to pick on other things quite yet, but I'll take a quick
@@ -291,8 +303,7 @@ used are also inconsistent, which I believe leads to confusion. I hope that
 the core team can get some focus time on it soon.
 
 Which brings me to one of the bright spots, actually, which is the community.
-I've lurked on IRC, seen the Issue and PR traffic, and seen the twitter threads.
-Andrew and it seems everyone involved with the language is passionate and
-helpful to anyone regardless of their knowledge of zig. I've yet to see a
-hostile attitude from any zig contributor.
-
+I've lurked on IRC, seen the Issue and PR traffic, and seen the twitter
+threads.  [Andrew](https://andrewkelley.me/) and it seems everyone involved
+with the language is passionate and helpful to anyone regardless of their
+knowledge of zig. I've yet to see a hostile attitude from any zig contributor.
