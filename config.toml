@@ -20,6 +20,8 @@ relativeURLs = true
     GitHubUser = "elerch"
     TwitterUser = "elerch"
     LinkedInUser = "emillerch"
+    MastodonUser = "@emil"
+    MastodonInstance = "mstdn.io"
     disqusShortname = "emillerch"
 
 [blackfriday]
