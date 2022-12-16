@@ -3,7 +3,8 @@ languageCode = "en-us"
 title = "Emil Lerch"
 SectionPagesMenu = "main"
 pygmentsStyle = "monokai"
-PygmentsCodeFences = "true"
+pygmentsCodefences = true
+pygmentsUseClasses = false
 theme = "gindoro"
 relativeURLs = true
 
@@ -23,6 +24,10 @@ relativeURLs = true
     MastodonUser = "@emil"
     MastodonInstance = "mstdn.io"
     disqusShortname = "emillerch"
+
+[markup]
+    [markup.highlight]
+        noclasses = true
 
 [blackfriday]
     smartypants = false
