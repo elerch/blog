@@ -5,7 +5,7 @@ published = 2007-04-24T14:57:00-07:00
 author = "Emil"
 tags = []
 +++
-[![](../images/thumbnails/2007-04-24-back-from-mexico-thats-a-big-fish-IMG_1700.JPG)](../images/2007-04-24-back-from-mexico-thats-a-big-fish-IMG_1700.JPG)  
+[![](/posts/2007-04-24/thumbnails/2007-04-24-back-from-mexico-thats-a-big-fish-IMG_1700.JPG)](/posts/2007-04-24/2007-04-24-back-from-mexico-thats-a-big-fish-IMG_1700.JPG)
 
 Here is the head of the fish I caught in Mexico. It's a
 [Roosterfish](http://www.anglingdirectholidays.com/pages/rooster_fish.html).
@@ -19,4 +19,4 @@ that is really heavy, and slippery.
 
   
 
-[![](../images/thumbnails/2007-04-24-back-from-mexico-thats-a-big-fish-IMG_1708.JPG)](../images/2007-04-24-back-from-mexico-thats-a-big-fish-IMG_1708.JPG)
+[![](/posts/2007-04-24/thumbnails/2007-04-24-back-from-mexico-thats-a-big-fish-IMG_1708.JPG)](/posts/2007-04-24/2007-04-24-back-from-mexico-thats-a-big-fish-IMG_1708.JPG)
