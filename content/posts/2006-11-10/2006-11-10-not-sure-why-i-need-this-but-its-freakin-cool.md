@@ -13,6 +13,6 @@ that? Absolutely not. Is it cool? Yes. My response? Totally email it!
   
 Without further ado...  
   
-[![](/posts/2006-11-10/thumbnails/2006-11-10-not-sure-why-i-need-this-but-its-freakin-cool-Left-20061108%40111517.jpg)](/posts/2006-11-10/2006-11-10-not-sure-why-i-need-this-but-its-freakin-cool-Left-20061108%40111517.jpg)  
+[![](/posts/2006-11-10/thumbnails/2006-11-10-not-sure-why-i-need-this-but-its-freakin-cool-Left-20061108%2540111517.jpg)](/posts/2006-11-10/2006-11-10-not-sure-why-i-need-this-but-its-freakin-cool-Left-20061108%2540111517.jpg)  
   
-[![](/posts/2006-11-10/thumbnails/2006-11-10-not-sure-why-i-need-this-but-its-freakin-cool-Right-20061108%40111450.jpg)](/posts/2006-11-10/2006-11-10-not-sure-why-i-need-this-but-its-freakin-cool-Right-20061108%40111450.jpg)
+[![](/posts/2006-11-10/thumbnails/2006-11-10-not-sure-why-i-need-this-but-its-freakin-cool-Right-20061108%2540111450.jpg)](/posts/2006-11-10/2006-11-10-not-sure-why-i-need-this-but-its-freakin-cool-Right-20061108%2540111450.jpg)
