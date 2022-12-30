@@ -5,16 +5,6 @@ published = 2013-07-12T14:41:00.004000-07:00
 author = "Emil Lerch"
 tags = []
 +++
-<table>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="/posts/2013-07-12/2013-07-12-rest-basics-Fighting_kittens-400.jpg"><img src="/posts/2013-07-12/thumbnails/2013-07-12-rest-basics-Fighting_kittens-400.jpg" /></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Obligatory upper-right blog image</td>
-</tr>
-</tbody>
-</table>
 
 I've created a video on the basic use of REST from a consuming
 developer's perspective.  It covers the following:
@@ -25,10 +15,8 @@ Normal HTTP Methods:
 
   
 
--   <span style="font-family: Verdana, sans-serif;"><span
-    style="line-height: 24px;">POST</span></span>
--   <span style="font-family: Verdana, sans-serif;"><span
-    style="line-height: 24px;">GET</span></span>
+-   POST
+-   GET
 -   PUT
 -   DELETE
 -   PATCH
