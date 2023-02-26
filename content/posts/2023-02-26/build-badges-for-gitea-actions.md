@@ -1,6 +1,6 @@
 ---
 title: "Gitea actions and build badges"
-date: 2022-09-26:23:18-07:00
+date: 2023-02-26T14:59:00-08:00
 draft: false
 ---
 
