@@ -133,7 +133,7 @@ with a `commit-status` CSS class, then captures whether it should be red or gree
 is either failed or canceled. All this fragility is in the `parseResponse`
 function starting line 19 below.
 
-```javacript
+```javascript
 export default {
   async fetch(request, env) {
     const getOrigin = function(components) {
