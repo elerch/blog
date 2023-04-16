@@ -83,7 +83,7 @@ really tiny. Here's a couple photos, first of the chip:
 
 Then of the chip attached to the dock for development:
 
-[![](/posts/2023-04-12/thumbnails/BL616_M0S.jpg)](/posts/2023-04-12/images/BL616_M0S.jpg)
+[![](/posts/2023-04-12/thumbnails/M0S_with_dev_dock.jpg)](/posts/2023-04-12/images/M0S_with_dev_dock.jpg)
 
 Keep in mind...this thing was $4, and can run Linux! Not very well I'm sure, but it's possible.
 So, I wanted to play around with it, get down to metal, because considering it is
