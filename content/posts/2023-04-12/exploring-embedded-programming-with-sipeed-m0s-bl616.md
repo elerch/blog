@@ -1,6 +1,6 @@
 ---
 title: "Exploring embedded programming with Sipeed m0s (BL616)"
-date: 2023-04-12:59:00-08:00
+date: 2023-04-12
 draft: false
 ---
 
