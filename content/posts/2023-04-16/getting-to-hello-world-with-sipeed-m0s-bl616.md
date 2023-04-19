@@ -9,7 +9,7 @@ Getting to hello world with Sipeed m0s (BL616)
 
 This post is part of a series.
 
-* [Part 1: Exploring embedded programming with the Sipeed M0S with the BL616 microprocessor](exploring-embedded-programming-with-sipeed-m0s-bl616/)
+* [Part 1: Exploring embedded programming with the Sipeed M0S with the BL616 microprocessor](/exploring-embedded-programming-with-sipeed-m0s-bl616/)
 * Part 2: Getting to hello world with Sipeed m0s (BL616)
 
 If you've been following along, we have 3 to do's left after getting to blinky
