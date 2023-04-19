@@ -9,7 +9,7 @@ Getting to hello world with Sipeed m0s (BL616)
 
 This post is part of a series.
 
-* [Part 1: Exploring embedded programming with the Sipeed M0S with the BL616 microprocessor](https://emil.lerch.org/exploring-embedded-programming-with-sipeed-m0s-bl616/)
+* [Part 1: Exploring embedded programming with the Sipeed M0S with the BL616 microprocessor](exploring-embedded-programming-with-sipeed-m0s-bl616/)
 * Part 2: Getting to hello world with Sipeed m0s (BL616)
 
 If you've been following along, we have 3 to do's left after getting to blinky
@@ -128,16 +128,15 @@ the following:
 [21:30:14.867] - set flash cfg: 14102
 [21:30:14.867] - Set flash config
 [21:30:14.869] - Set para time cost(ms): 1.668701171875
-[21:30:14.869] - ========= flash read jedec ID =========                                                                                     ttps://github.com/sipeed/M0S_BL616_example
-[21:30:14.870] - Read flash jedec ID                                                                                                         ttps://github.com/bouffalolab/bouffalo_sdk/
+[21:30:14.869] - ========= flash read jedec ID =========
+[21:30:14.870] - Read flash jedec ID
 [21:30:14.870] - readdata:
 [21:30:14.870] - b'c8601600'
 [21:30:14.870] - Finished
 [21:30:14.876] - Program operation
 [21:30:14.876] - Dealing Index 0
-[21:30:14.876] - ========= programming /home/lobo/bouffalo_sdk/M0S_BL616_example/sipeed/solutions/usbd_cdc_acm_with_uart/./build/build_out/usbd_cdc_acm_with_uart_bl616.bin to 0x000000                                                                                                   ttps://github.com/sipeed/M0S_BL616_example
-[21:30:14.878] - flash para file: /home/lobo/bouffalo_sdk/M0S_BL616_example/tools/bflb_tools/bouffalo_flash_cube/chips/bl616/efuse_bootheaderttps://github.com/bouffalolab/bouffalo_sdk/
-/flash_para.bin
+[21:30:14.876] - ========= programming /home/lobo/bouffalo_sdk/M0S_BL616_example/sipeed/solutions/usbd_cdc_acm_with_uart/./build/build_out/usbd_cdc_acm_with_uart_bl616.bin to 0x000000
+[21:30:14.878] - flash para file: /home/lobo/bouffalo_sdk/M0S_BL616_example/tools/bflb_tools/bouffalo_flash_cube/chips/bl616/efuse_bootheader/flash_para.bin
 [21:30:14.878] - Set flash config
 [21:30:14.879] - Set para time cost(ms): 1.68408203125
 [21:30:14.879] - ========= flash load =========
@@ -628,7 +627,7 @@ Hello world!
 ```
 
 Note that I changed the delay to every 2 seconds, so a new message appears.
-The completed code so far can be found here: xxx
+The completed code so far can be found here: https://github.com/elerch/bouffalo_sdk/tree/e790f5fa86c40f2a788c78a5dbdec0ccfacf6209/examples/peripherals/usbdev/usbd_cdc_acm
 
 Our current to do list:
 
