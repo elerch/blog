@@ -304,7 +304,7 @@ After reading all characters, we see this code set the UART to RTS, or "ready
 to send". That's clearly the primary "receive some stuff over the line" path.
 
 RTO...I need to investigate. A quick search tells me RTO is "Receiver Timeout".
-Many things in low level program are fully expected, so we shouldn't assume (yet)
+Many timeouts in low level programming are fully expected, so we shouldn't assume (yet)
 that this timeout is a bad thing. Scanning the SDK `grep -ri rto` and weeding
 out the FreeRTOS references, it's looking like RTO is configured and it's
 probably just a normal part of life here, but we do see an attempt to flush
@@ -386,7 +386,8 @@ a compiler sees a variable, it will happily optimize it in tons of ways to make
 your code faster and more efficient. However, memory is used a lot between
 threads or even by devices (using memory mapped I/O), to communicate. So
 the volatile keyword lets the compiler know that the value of this variable
-may change. Searching for `ep_tx_busy_flag`, I see hits in the `src/cdc_acm_template.c`
+may change without the compiler's ability to predict that change. Searching
+for `ep_tx_busy_flag`, I see hits in the `src/cdc_acm_template.c`
 file. My guess at this point is that there is an interrupt triggered when data is
 sent, and we use that and a timeout interrupt to turn the flag on and off.
 
@@ -626,12 +627,12 @@ Hello world!
 
 ```
 
-Note that I changed the delay to every 2 seconds, so a new message appears.
+Note that I changed the delay, so we see a new message appear every 2 seconds.
 The completed code so far can be found here: https://github.com/elerch/bouffalo_sdk/tree/e790f5fa86c40f2a788c78a5dbdec0ccfacf6209/examples/peripherals/usbdev/usbd_cdc_acm
 
 Our current to do list:
 
-1. What’s the difference between Bouffalo Labs’ SDK and Sipeed’s repo?
+1. What’s the difference between Bouffalo Lab's SDK and Sipeed’s repo?
 2. Avoid binary toolchains
 3. What's the difference between TinyUSB and CherryUSB?
 4. (optional) What is this library doing for us? Can we do it ourselves?
