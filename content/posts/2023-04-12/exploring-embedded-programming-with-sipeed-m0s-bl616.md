@@ -13,6 +13,7 @@ This is part of an ongoing series:
 
 * Part 1: Exploring embedded programming with the Sipeed M0S with the BL616 microprocessor
 * [Part 2: Getting to hello world with Sipeed m0s (BL616)](/getting-to-hello-world-with-sipeed-m0s-bl616/)
+* [Part 3: Simplifying our tool chain: First steps](/simplifying-our-tool-chain-first-steps/)
 
 I have been dabbling in low level programming lately. Late last year, I put together
 a Hello World assembly language sample in multiple ISAs to see the difference between
