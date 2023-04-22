@@ -72,8 +72,9 @@ everything *.so can go. The high level action plan is:
 6. Run `python3 BLFlashCommand.py` and catch the error
 7. Fix the error, go to step 6 until no errors
 
-This is easier than it sounds. The errors, generally, will fall into one of the
-following categories:
+This is easier than it sounds, and ultimately I switched to [decompyle3](https://pypi.org/project/decompyle3/)
+and [created a docker image to help](https://github.com/elerch/python37-decompilers).
+The errors, generally, will fall into one of the following categories:
 
 * Missing import: copy the py file from the corresponding decompiled directory
 * Missing import, that import is a library in [PyPi](https://pypi.org): add a reference to
@@ -99,7 +100,9 @@ all relevant `pyc` files so I'd have versions to compare.
 
 We'll skip the gory details here, but a few hours later, I have a fully working,
 "open source" version of the BLFlashCommand flash command, located here:
-https://git.lerch.org/lobo/blflashcommand
+https://git.lerch.org/lobo/blflashcommand. The spinning and eating memory, for
+the curious, was a problem in the configuration parser. I ultimately threw away
+all the code there and replaced it with Python standard library stuff.
 
 You can see the changes I've made to the decompilation output (including one
 file that was nearly completely removed and replaced with a small shim) in the
