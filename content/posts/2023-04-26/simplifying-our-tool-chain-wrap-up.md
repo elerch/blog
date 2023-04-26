@@ -115,4 +115,6 @@ One permissions note: if using docker proper (rather than podman), build output
 will be owned by root. Using `-u $(id -u):$(id -g)` as part of the docker commands
 above will address that.
 
-With this done, let's get back to the actual code.
+With this done, let's get back to the actual code. The code from part 1, slimmed
+down by this exercise, can be found on GitHub, and because we'll use this code
+moving forward, here is the link to the current commit: https://github.com/elerch/bl616-usb-cdc-acm/tree/7267d81b861d6c41a64bd69ca670bc38e4939070
