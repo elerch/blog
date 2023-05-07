@@ -16,7 +16,7 @@ This is part of an ongoing series:
 * [Part 3: Simplifying our tool chain: First steps](/simplifying-our-tool-chain-first-steps/)
 * [Part 4: Simplifying the tool chain: Wrap up](/simplifying-our-tool-chain-wrap-up/)
 * [Part 5: Learning the SDK and USB protocol](/learning-the-sdk-and-usb-protocol//)
-* [Part 6: Wrapping up our exploration: A mini shell](wrapping-up-our-exploration-a-mini-shell/)
+* [Part 6: Wrapping up our exploration: A mini shell](/wrapping-up-our-exploration-a-mini-shell/)
 
 I have been dabbling in low level programming lately. Late last year, I put together
 a Hello World assembly language sample in multiple ISAs to see the difference between

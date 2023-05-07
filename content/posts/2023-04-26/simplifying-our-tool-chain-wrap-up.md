@@ -14,7 +14,7 @@ This is part of an ongoing series:
 * [Part 3: Simplifying the tool chain: First steps](/simplifying-our-tool-chain-first-steps/)
 * Part 4: Simplifying the tool chain: Wrap up
 * [Part 5: Learning the SDK and USB protocol](/learning-the-sdk-and-usb-protocol//)
-* [Part 6: Wrapping up our exploration: A mini shell](wrapping-up-our-exploration-a-mini-shell/)
+* [Part 6: Wrapping up our exploration: A mini shell](/wrapping-up-our-exploration-a-mini-shell/)
 
 "The next step should be comparatively easy. Swap out the remaining usage of
 binary blobs in the toolchain." - me, last week
