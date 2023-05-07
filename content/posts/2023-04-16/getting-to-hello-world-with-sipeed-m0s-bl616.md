@@ -14,6 +14,7 @@ This post is part of a series.
 * [Part 3: Simplifying our tool chain: First steps](/simplifying-our-tool-chain-first-steps/)
 * [Part 4: Simplifying the tool chain: Wrap up](/simplifying-our-tool-chain-wrap-up/)
 * [Part 5: Learning the SDK and USB protocol](/learning-the-sdk-and-usb-protocol//)
+* [Part 6: Wrapping up our exploration: A mini shell](wrapping-up-our-exploration-a-mini-shell/)
 
 If you've been following along, we have 3 to do's left after getting to blinky
 with this device. These are:

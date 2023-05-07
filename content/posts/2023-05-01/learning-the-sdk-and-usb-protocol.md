@@ -14,6 +14,7 @@ This is part of an ongoing series:
 * [Part 3: Simplifying the tool chain: First steps](/simplifying-our-tool-chain-first-steps/)
 * [Part 4: Simplifying the tool chain: Wrap up](/simplifying-our-tool-chain-wrap-up/)
 * Part 5: Learning the SDK and USB protocol
+* [Part 6: Wrapping up our exploration: A mini shell](wrapping-up-our-exploration-a-mini-shell/)
 
 With our toolchain in place, it's now time to actually do something real. In
 part 2, we we were able to get a hello world over USB by largely copying and

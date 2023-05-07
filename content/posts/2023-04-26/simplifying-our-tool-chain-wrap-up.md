@@ -14,6 +14,7 @@ This is part of an ongoing series:
 * [Part 3: Simplifying the tool chain: First steps](/simplifying-our-tool-chain-first-steps/)
 * Part 4: Simplifying the tool chain: Wrap up
 * [Part 5: Learning the SDK and USB protocol](/learning-the-sdk-and-usb-protocol//)
+* [Part 6: Wrapping up our exploration: A mini shell](wrapping-up-our-exploration-a-mini-shell/)
 
 "The next step should be comparatively easy. Swap out the remaining usage of
 binary blobs in the toolchain." - me, last week
@@ -118,4 +119,4 @@ above will address that.
 
 With this done, let's get back to the actual code. The code from part 1, slimmed
 down by this exercise, can be found on GitHub, and because we'll use this code
-moving forward, here is the link to the current commit: https://github.com/elerch/bl616-usb-cdc-acm/tree/7267d81b861d6c41a64bd69ca670bc38e4939070
+moving forward, here is the link to the current commit: https://github.com/elerch/bl616-usb-cdc-acm/tree/797141a2cdc450c3834476124f483fc6c1741859
