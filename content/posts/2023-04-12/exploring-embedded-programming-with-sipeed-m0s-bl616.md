@@ -15,6 +15,7 @@ This is part of an ongoing series:
 * [Part 2: Getting to hello world with Sipeed m0s (BL616)](/getting-to-hello-world-with-sipeed-m0s-bl616/)
 * [Part 3: Simplifying our tool chain: First steps](/simplifying-our-tool-chain-first-steps/)
 * [Part 4: Simplifying the tool chain: Wrap up](/simplifying-our-tool-chain-wrap-up/)
+* [Part 5: Learning the SDK and USB protocol](/learning-the-sdk-and-usb-protocol//)
 
 I have been dabbling in low level programming lately. Late last year, I put together
 a Hello World assembly language sample in multiple ISAs to see the difference between

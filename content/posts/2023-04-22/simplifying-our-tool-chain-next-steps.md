@@ -13,6 +13,7 @@ This is part of an ongoing series:
 * [Part 2: Getting to hello world with Sipeed m0s (BL616)](/getting-to-hello-world-with-sipeed-m0s-bl616/)
 * Part 3: Simplifying the tool chain: First steps
 * [Part 4: Simplifying the tool chain: Wrap up](/simplifying-our-tool-chain-wrap-up/)
+* [Part 5: Learning the SDK and USB protocol](/learning-the-sdk-and-usb-protocol//)
 
 Before going any further, the fact that I now have a bunch of random binaries
 downloaded from the Internet on my machine, and 2GB of downloaded SDKs, I really
