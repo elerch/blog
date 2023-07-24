@@ -7,6 +7,9 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoRxIS1Dr33Jhybd/ck7UCLQ1Df5msSpvw03w/ljgB
 # Gallium - Chromebook running GalliumOS
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDxUNqjpukVhDXJnicD0dOhMMaQPOqYgPR14NSUd9rLp lobo@gallium
 
+# Laptop
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDXhuGwCq+BDAQUBPCLRQamZ21YLlBGYWaoKaDsKqzNW lobo@etls76
+
 # Home server
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO4qu/tmKfeTtFDFimpcKH+1HRiiug7eNzNvORoH1ngh lobo@nas2
 
