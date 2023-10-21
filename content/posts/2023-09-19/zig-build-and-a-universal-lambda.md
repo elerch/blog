@@ -1,6 +1,6 @@
 ---
 title: 'Zig build, and how I created a "universal lambda" function'
-date: 2023-05-07
+date: 2023-10-21
 draft: false
 ---
 
@@ -59,6 +59,7 @@ This means that zig code is run at three stages in the build:
 1. Compile time code during the compilation of the `build` executable
 2. Run time code during the "build phase" while running the `build` executable
 3. Run time code during the "make phase" while running the `build` executable
+
 
 ### Step 1: Package fetch
 
@@ -122,7 +123,7 @@ compilation to be OS or Processor specific!
 
 With the executable compiled, the last step is to run the build. Ultimately,
 this executes the code in `build.zig`. This code doesn't actually do anything
-tangible, however. What it does it provides a dependency graph, to let the build
+tangible, however. What it does do is provide a dependency graph, to let the build
 know that when a user provides a target/goal/step of, for instance `run`, we
 should find that run step, then back track to determine all the prerequisite
 steps needed (and in what order) to make the end goal work. Let's look at a
@@ -248,7 +249,7 @@ http client in zig 0.11.0. I plan to re-address this with zig 0.12.0, by which
 time I believe both issues will be fixed. In the meantime, it's hacky, relies
 on the AWS CLI, and is coded to not even show the options if you are running
 anything other than Linux (other POSIX OS's like mac, *BSD, etc should work,
-but hasn't been tested). The build:
+but haven't been tested). The build:
 
 * Adds modules for use by the application
 * Sets up steps to package, set up permissions, deploy, and run the function
@@ -279,7 +280,7 @@ The design of my personal web server is to allow a set of independently develope
 managing lots of processes and their associated memory requirements by allowing
 me to slap together a bunch of disparate microservices and run them together.
 There is no assumption of security boundaries within the system. It is similar to,
-but more flexible than how Redis handles modules. This is a little different,
+but more flexible than, how Redis handles modules. This is a little different,
 because in this case, our package needs to modify the build much more
 substantially. The build:
 
