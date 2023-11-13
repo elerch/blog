@@ -38,7 +38,8 @@ importance, I find quite a bit of poor advice on the Internet.
 
 Unlike what I read before hand, **these are critical**. Basically, you can
 have a  near perfect score, and nobody will deliver your email without this.
-Of course, it's the owner of the IP range that needs to do this.
+Of course, it's the owner of the IP range that needs to do this, so setting
+that up will vary based on the hosting provider you use.
 
 * DMARC, SPF, DKIM
 
