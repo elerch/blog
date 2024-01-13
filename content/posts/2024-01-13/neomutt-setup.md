@@ -1,6 +1,6 @@
 ---
 title: "Neomutt setup"
-date: 2024-01-13T11:43-08:00
+date: 2024-01-13T11:43:00-08:00
 draft: false
 ---
 
