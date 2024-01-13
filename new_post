@@ -1,4 +1,32 @@
 #!/bin/sh
 # by taking "created" off, we can easily enable
 # vi $(./new_post yada-yada) and enter an editor
-hugo new posts/`date +%Y-%m-%d`/$1.md |cut -f 1 -d ' '
+command -v "hugo" > /dev/null 2>&1
+hugo_exists=$?
+if [ ! $hugo_exists ]; then
+  echo 'Hugo does not exist as a command - please run "nix develop" and re-run' >&2
+  return 1
+fi
+git switch -c "$1"
+rc=$?
+if [ ! $rc ]; then
+  echo 'could not switch branches'
+  return $rc
+fi
+filename=$(hugo new "posts/$(date +%Y-%m-%d)/$1.md" |cut -f 2 -d ' '|tr -d \")
+rc=$?
+if [ ! $rc ]; then
+  echo Could not create new post
+  return $rc
+fi
+echo "---
+title: \"$1\"
+date: $(date -Iminutes)
+draft: false
+---
+
+$1
+==
+" > "$filename"
+
+echo "$filename"
