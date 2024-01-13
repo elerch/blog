@@ -22,7 +22,7 @@ if [ -z "$filename" ]; then
 fi
 echo "---
 title: \"$1\"
-date: $(date -Iminutes)
+date: $(date -Iseconds)
 draft: false
 ---
 
