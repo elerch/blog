@@ -1,12 +1,18 @@
 #!/bin/sh
 # by taking "created" off, we can easily enable
 # vi $(./new_post yada-yada) and enter an editor
+if [ $# -ne 1 ]; then
+  echo "usage: $0 <post-name>"
+  echo 'suggestion: vi $(./new-post <post-name>)'
+  return 0
+fi
 command -v "hugo" > /dev/null 2>&1
 hugo_exists=$?
-if [ ! $hugo_exists ]; then
+if [ $hugo_exists -ne 0 ]; then
   echo 'Hugo does not exist as a command - please run "nix develop" and re-run' >&2
   return 1
 fi
+
 git switch -c "$1"
 rc=$?
 if [ ! $rc ]; then
