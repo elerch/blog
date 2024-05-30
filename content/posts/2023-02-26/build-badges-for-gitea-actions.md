@@ -4,6 +4,8 @@ date: 2023-02-26T14:59:00-08:00
 draft: false
 ---
 
+**UPDATE:** With Gitea 1.22.0, build badge support is now [built in](https://docs.gitea.com/usage/actions/badge) 
+
 Gitea actions and build badges
 ==============================
 
