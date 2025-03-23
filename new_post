@@ -4,6 +4,7 @@
 if [ $# -ne 1 ]; then
   echo "usage: $0 <post-name>"
   echo 'suggestion: vi $(./new-post <post-name>)'
+  echo "you likely also want to run nix develop first (or otherwise ensure hugo exists)"
   return 0
 fi
 command -v "hugo" > /dev/null 2>&1
