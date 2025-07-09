@@ -7,7 +7,7 @@ draft: false
 How I work
 ==========
 
-I had someone ask me a year or two "how do you work, exactly", because my setup
+I had someone ask me a while ago "how do you work, exactly", because my setup
 was strange and new to them. It's actually an interesting question, and it's
 evolved over more time than I'd care to admit. Because it evolves, this post is
 a snapshot in time, representing my setup as of mid 2025. I'll start with an
@@ -25,25 +25,25 @@ use a desktop at home, and laptop when traveling.
 
 At home, I have a primary desktop I use, and a couple secondary desktops that
 are in use by other members of my family. One of these runs Windows for my son
-to run some games, and the others all run Linux. I use the Windows desktop for
+to play some games, and the others all run Linux. I use the Windows desktop for
 games sometimes, though I'm starting to play games on Linux. My work laptop is
-a Mac that I use primarily for customer demos, testing, and bring it with me
+a Mac that I use primarily for customer demos, testing, and I bring it with me
 occasionally traveling for the same reasons.
 
 The rest of this post will primarily focus on Linux, although most of what I
-write will also apply to Mac. Theoretically other operating systems such as
-FreeBSD, but I haven't tested this, and my bootstrap script (more later), would
-definitely need changes. Philosophically, I try to stick to as much
-open source tooling as possible, and I value the ability to quickly get to
-a familiar environment, and update to my latest set of tools, with no surprises.
-Sticking to a combination of scripting and open source tools help immensely.
-However, for work, this isn't possible and as a result, I don't even try.
-Avoiding Outlook for instance is possible at Amazon, but it is too much work,
-and I couldn't realistically function without Word and PowerPoint in my role.
-My corporate workspace serves as a good partition, however, so I lean on that.
-To have as much portability/flexibility, I want to be able to have the same
-set of tools everywhere. Sometimes that means over ssh, so over time I've become
-focused on CLI/TUI workflows.
+write will also apply to Mac. Theoretically my setup will work with other
+operating systems such as FreeBSD, but I haven't tested this, and my bootstrap
+script (more later), would definitely need changes. Philosophically, I try to
+stick to as much open source tooling as possible, and I value the ability to
+quickly get to a familiar environment, and update to my latest set of tools,
+with no surprises. Sticking to a combination of scripting and open source tools
+help immensely. However, for work, this isn't possible and as a result, I don't
+even try. Avoiding Outlook for instance is possible at Amazon, but it is too
+much work, and I couldn't realistically function without Word and PowerPoint in
+my role. My corporate workspace serves as a good partition, however, so I lean
+on that. To have maximum portability/flexibility, I want to be able to have the
+same set of tools everywhere. Sometimes that means over ssh, so over time I've
+become focused on CLI/TUI workflows.
 
 With this in mind, my general approach to using software is the following
 hierarchy, rated in order, so I will look for software starting at the top
@@ -117,7 +117,7 @@ Starting from the beginning, my bootstrap script, which hasn't changed since
 * Other dependencies, if necessary
 
 The other dependencies include curl (to download mr/vcsh), and perl (which mr uses).
-vcsh, at the pinned commit, is a set of shell script. Beyond that commit it has
+vcsh, at the pinned commit, is a set of shell scripts. Beyond that commit it has
 changed architecture. These two tools are critical to all my configuration, and
 roughly follows the pattern outlined in the [advanced configuration of this
 blog](https://germano.dev/dotfiles/#mr). tl;dr, vcsh allows me to manage
@@ -179,12 +179,13 @@ clones the myrepos repo, then myrepos can do the heavy lifting from there.
 How does this work? Part 2: Working with shells
 -----------------------------------------------
 
-mr manages my shell configuration. I prefer [zsh](https://en.wikipedia.org/wiki/Z_shell),
-though I don't actually use many of its special features, but I love the history
-sharing. However, zsh isn't usually the default when I'm encountering a new machine,
-and I want to get from 0->productive as quickly as possible, so it's important
-to me that bash work just fine. Today, bash and zsh look and feel nearly identical
-to me.
+mr manages my shell configuration. I prefer
+[zsh](https://en.wikipedia.org/wiki/Z_shell), though I don't actually use many
+of its special features. I do love the history sharing and a few other
+niceties. However, zsh isn't usually the default when I'm encountering a new
+machine, and I want to get from 0->productive as quickly as possible, so it's
+important to me that bash work just fine. Today, bash and zsh look and feel
+nearly identical to me.
 
 The way this works is through the use of a common file that works for both
 bash and zsh. Both `.bashrc` and `.zshrc` source this common `.commonrc` file,
