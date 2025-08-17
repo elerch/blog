@@ -24,6 +24,9 @@ relativeURLs = true
     MastodonUser = "@emil"
     MastodonInstance = "mstdn.io"
     disqusShortname = "emillerch"
+    openpgpuser = "lobo@lerch.org"
+    openpgpkey = "https://emil.lerch.org/3125C87C.asc"
+    openpgpfingerprintqr = "https://emil.lerch.org/openpgp-fingerprint-qr.png"
 
 [markup]
     [markup.highlight]
