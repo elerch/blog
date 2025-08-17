@@ -1,2 +1,5 @@
 /static/3125C87C.asc
-  content-type: application/pgp-keys
+  ! Content-Type
+
+/static/3125C87C.asc
+  Content-Type: application/pgp-keys
