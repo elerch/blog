@@ -1,0 +1,10 @@
+DON'T USE THIS: gpg --keyserver hkps://keys.openpgp.org --send-key 3125C87C
+(actually, maybe this is ok after the initial email verification works?)
+
+USE THIS INSTEAD:
+gpg --export 3125C87C |curl -T - https://keys.openpgp.org
+
+^^ this one allows you to search by email address
+
+Getting a QR code that can be import into tools (one time operation):
+qrencode -o openpgp-fingerprint-qr.png -t PNG $(echo 'OPENPGP4FPR:43E5 257E 2A78 1D54 CC53  C1E9 2328 0648 3125 C87C' | tr -d " ")

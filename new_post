@@ -4,13 +4,13 @@
 if [ $# -ne 1 ]; then
   echo "usage: $0 <post-name>"
   echo 'suggestion: vi $(./new-post <post-name>)'
-  echo "you likely also want to run nix develop first (or otherwise ensure hugo exists)"
+  echo 'make sure hugo exists - use "mise i" if necessary (and mise installed)'
   return 0
 fi
 command -v "hugo" > /dev/null 2>&1
 hugo_exists=$?
 if [ $hugo_exists -ne 0 ]; then
-  echo 'Hugo does not exist as a command - please run "nix develop" and re-run' >&2
+  echo 'Hugo does not exist as a command - please install mise, execute "mise i" and re-run' >&2
   return 1
 fi
 
