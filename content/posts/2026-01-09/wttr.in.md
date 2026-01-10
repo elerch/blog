@@ -127,7 +127,9 @@ have authored directly. I literally said to myself on more than one occasion,
 "this works, but it doesn't look like code *I* would write", and I'd change
 it. Sometimes I'd get into heated arguments with the AI, to the point where
 once my wife came downstairs and asked why I was typing SO DAMN LOUDLY. I had to
-tell her that was me yelling at the AI. Things that were super helpful though:
+tell her that was me yelling at the AI.
+
+**Things that were super helpful:**
 
 * Large refactorings: Once all the unit tests were in, the AI could cut through
   these like butter, but I did have to make sure it was very clear when it could
@@ -149,7 +151,7 @@ tell her that was me yelling at the AI. Things that were super helpful though:
   things doing IO from pure functions. I knew that whenever the AI finished,
   the build and the tests would succeed, and I would just play quality control.
 
-Where I struggled:
+**Where I struggled:**
 
 * Visual stuff: It was easy to get it to get something visible, but getting it
   *right* was a whole different matter. I had a day-long argument about whether
@@ -207,3 +209,7 @@ finish this feature a lot faster than I would have before AI. I will also,
 of course, make sure the owner of wttr.in knows about this in case there's
 any interest in...a full rewrite of the code into a language they've likely
 never used?
+
+Oh...and the repo is at https://git.lerch.org/lobo/wttr
+
+You can try it out at https://wttr.lerch.org/
